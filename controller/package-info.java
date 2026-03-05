@@ -1,4 +1,0 @@
-/**
- * Paquete controller.
- */
-package controller;
