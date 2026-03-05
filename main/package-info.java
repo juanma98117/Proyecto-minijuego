@@ -1,0 +1,4 @@
+/**
+ * Paquete main.
+ */
+package main;
