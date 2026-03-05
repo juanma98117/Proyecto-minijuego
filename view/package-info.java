@@ -1,0 +1,4 @@
+/**
+ * Paquete view.
+ */
+package view;
