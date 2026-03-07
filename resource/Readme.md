@@ -56,24 +56,26 @@ classDiagram
     BancoPreguntas "1" o-- "*" Pregunta : Agregación (Contiene)
     ```
 ```mermaid
-    actor "Jugador" as J
+   graph TD
+    %% Definición del Actor
+    Jugador((Jugador))
 
-    package "Sistema PreguntasDAW" {
-        usecase "Iniciar Partida" as UC1
-        usecase "Visualizar Pregunta" as UC2
-        usecase "Responder Pregunta" as UC3
-        usecase "Ver Puntuación" as UC4
-        usecase "Recibir Feedback (Acierto/Error)" as UC5
-        usecase "Finalizar Juego" as UC6
-    }
+    subgraph "Sistema PreguntasDAW"
+        UC1(Iniciar Partida)
+        UC2(Visualizar Pregunta)
+        UC3(Responder Pregunta)
+        UC4(Ver Puntuación)
+        UC5(Recibir Feedback)
+        UC6(Finalizar Juego)
+    end
 
     %% Relaciones de interacción
-    J --> UC1
-    J --> UC3
+    Jugador --> UC1
+    Jugador --> UC3
     
-    %% Relaciones de dependencia del sistema
-    UC1 ..> UC2 : <<include>>
-    UC3 ..> UC5 : <<include>>
-    UC3 ..> UC4 : <<include>>
-    UC5 ..> UC6 : <<extend>> (Si falla o termina banco)
+    %% Relaciones de dependencia
+    UC1 -.->|include| UC2
+    UC3 -.->|include| UC5
+    UC3 -.->|include| UC4
+    UC5 -.->|extend| UC6
     ```
