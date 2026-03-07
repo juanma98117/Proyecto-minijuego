@@ -56,7 +56,6 @@ classDiagram
     BancoPreguntas "1" o-- "*" Pregunta : Agregación (Contiene)
     ```
 ```mermaid
-    useCaseDiagram
     actor "Jugador" as J
 
     package "Sistema PreguntasDAW" {
